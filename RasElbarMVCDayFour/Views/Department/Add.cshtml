@@ -1,0 +1,14 @@
+﻿@model Department
+
+<form action="/Department/SaveAdd">
+    <label>Name</label>
+    <input type="text" name="Name" value="@Model?.Name" />
+
+    <label>Manger Name</label>
+
+    <input type="text" name="MangerName" value="@Model?.MangerName" />
+
+
+    <input type="submit" value="Add" />
+
+</form>

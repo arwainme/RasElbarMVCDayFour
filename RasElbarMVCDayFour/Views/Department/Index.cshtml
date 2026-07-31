@@ -1,0 +1,33 @@
+﻿@model List<Department>
+
+    <a href="/Department/Add">Add new department</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>NAme</th>
+                <th>Manger nmae</th>
+
+            </tr>
+        </thead>
+        <tbody>
+@foreach (var dept in Model)
+{
+            <tr>
+                <td>
+                    @dept.Name
+
+                </td>
+                <td>
+
+                    @dept.MangerName
+                </td>
+                <td>
+                    <a href="/Department/Edit/@dept.Id">Edit</a>
+                </td>
+
+            </tr>
+}
+        </tbody>
+
+    </table>
+
