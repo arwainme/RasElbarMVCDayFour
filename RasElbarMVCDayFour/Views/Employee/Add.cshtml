@@ -1,0 +1,23 @@
+﻿@model Employee
+<form asp-action="SaveAdd" asp-controller="Employee" method="post">
+
+    <label asp-for="Name"></label>
+    <input asp-for="Name" class="form-control" />
+
+    <label asp-for="Age"></label>
+    <input asp-for="Age" class="form-control" />
+
+    <label asp-for="Salary"></label>
+    <input asp-for="Salary" class="form-control" />
+
+    <label asp-for="Address"></label>
+    <input asp-for="Address" class="form-control" />
+
+    
+    <label asp-for="DepartmentId"></label>
+    <input asp-for="DepartmentId" class="form-control" />
+
+
+    <input type="submit" value="Add Employee" class="btn btn-primary" />
+
+</form>

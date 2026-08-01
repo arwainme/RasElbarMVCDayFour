@@ -1,0 +1,19 @@
+﻿@model List<Employee>
+
+    <a asp-action="Add" asp-controller="Employee">Add new Employee</a>
+
+    <h1>Employee Information</h1>
+    @foreach (var employee in Model)
+    {
+        <div>
+            <h1>Id : @employee.Id</h1>
+            <h1>dept Id : @employee.DepartmentId</h1>
+            <h2>@employee.Name</h2>
+            <p>Age: @employee.Age</p>
+            <p>Salary: @employee.Salary</p>
+            <p>Address: @employee.Address</p>
+        
+        </div>
+    }
+
+
