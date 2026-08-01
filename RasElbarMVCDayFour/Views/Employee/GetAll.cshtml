@@ -5,9 +5,8 @@
     <h1>Employee Information</h1>
     @foreach (var employee in Model)
     {
-        <div>
-            <h1>Id : @employee.Id</h1>
-            <h1>dept Id : @employee.DepartmentId</h1>
+        <div style="border: 1px solid #ccc; padding: 10px; margin: 10px;">
+            <h1>dept Name : @employee.Department.Name</h1>
             <h2>@employee.Name</h2>
             <p>Age: @employee.Age</p>
             <p>Salary: @employee.Salary</p>

@@ -1,4 +1,9 @@
 ﻿@model Employee
+@{
+    SelectList departmentList = new SelectList(ViewBag.Departments, "Id", "Name");
+}
+
+
 <form asp-action="SaveAdd" asp-controller="Employee" method="post">
 
     <label asp-for="Name"></label>
@@ -15,7 +20,12 @@
 
     
     <label asp-for="DepartmentId"></label>
-    <input asp-for="DepartmentId" class="form-control" />
+    <select asp-for="DepartmentId" 
+            class="form-control" 
+            asp-items="departmentList">
+
+        <option value="">Select Department</option>
+    </select>
 
 
     <input type="submit" value="Add Employee" class="btn btn-primary" />

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RasElbarMVCDayFour.Models;
 
 namespace RasElbarMVCDayFour.Controllers
@@ -9,13 +10,14 @@ namespace RasElbarMVCDayFour.Controllers
 
         public IActionResult GetAll()
         {
-            var emps = _context.Employees.ToList();
+            var emps = _context.Employees
+                .Include(e => e.Department).ToList();
 
             return View("GetAll",emps);
         }
         public IActionResult Add()
         {
-            ViewData
+            ViewData["Departments"] = _context.Departments.ToList();
             return View("Add");
         }
 
@@ -24,6 +26,14 @@ namespace RasElbarMVCDayFour.Controllers
 
             if (ModelState.IsValid) 
             { 
+                if(empFromUser.DepartmentId == null)
+                {
+                    ViewData["Departments"] = _context.Departments.ToList();
+
+                    return View("Add", empFromUser);
+                    
+                }
+
                 _context.Employees.Add(empFromUser);
                 _context.SaveChanges();
 
@@ -31,7 +41,8 @@ namespace RasElbarMVCDayFour.Controllers
 
 
             }
-         
+            ViewData["Departments"] = _context.Departments.ToList();
+
             return View("Add");
             
 
