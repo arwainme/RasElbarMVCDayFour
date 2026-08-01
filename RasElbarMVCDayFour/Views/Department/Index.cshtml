@@ -1,6 +1,8 @@
 ﻿@model List<Department>
 
-    <a href="/Department/Add">Add new department</a>
+    @* <a href="/Department/Add">Add new department</a> *@
+
+    @Html.ActionLink("Add new department", "Add" , "Department" )
     <table class="table table-bordered">
         <thead>
             <tr>

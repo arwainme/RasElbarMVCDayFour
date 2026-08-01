@@ -1,13 +1,13 @@
 ﻿@model Department
 
-<form action="/Department/SaveEdit/@Model.Id" method="post">
+<form asp-action="SaveEdit" asp-controller="Department" asp-route-id="@Model.Id" asp-route-name="" method="post">
     <label>Name :</label>
-    <input type="text" name="Name" value="@Model.Name"/>
+    <input type="text" asp-for="Name" class="form-control"/>
 
     <label>
         Manger Name :
     </label>
-    <input type="text" name="MangerName" value="@Model.MangerName" />
+    <input type="text" asp-for="MangerName" class="form-control"/>
 
     <input type="submit" value="Edit"/>
 
