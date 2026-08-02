@@ -11,6 +11,8 @@
             <p>Age: @employee.Age</p>
             <p>Salary: @employee.Salary</p>
             <p>Address: @employee.Address</p>
+
+            <a asp-action="Delete" asp-controller="Employee" asp-route-id="@employee.Id" class="btn btn-danger">Delete</a>
         
         </div>
     }

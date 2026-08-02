@@ -24,6 +24,9 @@ namespace RasElbarMVCDayFour.Controllers
 
         [HttpPost]
 
+        // ModelState.IsValid => check if all the validation attributes are valid or not
+
+
         public IActionResult SaveAdd(Department deptfromUser)
         {
             if (deptfromUser.Name == null || deptfromUser.MangerName == null)

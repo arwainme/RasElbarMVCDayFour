@@ -8,15 +8,19 @@
 
     <label asp-for="Name"></label>
     <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
 
     <label asp-for="Age"></label>
     <input asp-for="Age" class="form-control" />
+    <span asp-validation-for="Age" class="text-danger"></span>
 
     <label asp-for="Salary"></label>
     <input asp-for="Salary" class="form-control" />
+    <span asp-validation-for="Salary" class="text-danger"></span>
 
     <label asp-for="Address"></label>
     <input asp-for="Address" class="form-control" />
+    <span asp-validation-for="Address" class="text-danger"></span>
 
     
     <label asp-for="DepartmentId"></label>
@@ -29,5 +33,5 @@
 
 
     <input type="submit" value="Add Employee" class="btn btn-primary" />
-
+    <div asp-validation-summary="All" class="text-danger"></div>
 </form>

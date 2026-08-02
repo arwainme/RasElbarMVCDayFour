@@ -26,7 +26,7 @@ namespace RasElbarMVCDayFour.Controllers
 
             if (ModelState.IsValid) 
             { 
-                if(empFromUser.DepartmentId == null)
+                if(!ModelState.IsValid)
                 {
                     ViewData["Departments"] = _context.Departments.ToList();
 
@@ -45,6 +45,21 @@ namespace RasElbarMVCDayFour.Controllers
 
             return View("Add");
             
+
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var  emp = _context.Employees.FirstOrDefault(x=> x.Id == id);
+            if(emp == null)
+            {
+                return NotFound();
+
+            }
+
+            _context.Employees.Remove(emp);
+            _context.SaveChanges();
+            return RedirectToAction("GetAll");
 
         }
     }
